@@ -1,0 +1,81 @@
+.logo {
+  text-align: center;
+  padding-top: 25px;
+  font-size: 1.6rem;
+}
+.logo img {
+  width: 82px;
+  height: 82px;
+  margin-bottom: 10px;
+}
+.content {
+  padding: 0 6%;
+  margin-top: 23px;
+}
+.content li {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 7px 5px;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+.content input {
+  border: none;
+  line-height: 20px;
+}
+.content .forget_pwd {
+  text-align: right;
+}
+.content .forget_pwd a {
+  font-size: 1.2rem;
+  color: #0197d3;
+}
+.content .choose {
+  margin-top: 25px;
+  margin-bottom: 40px;
+}
+.content .choose span {
+  margin-left: 63px;
+  padding-left: 15px;
+  position: relative;
+  font-size: 1.2rem;
+}
+.content .choose span:after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -5px;
+  background: url(../images/choose.png) 0px 0px no-repeat;
+  background-size: 10px 20px;
+}
+.content .choose .active:after {
+  background-position: 0px -10px;
+}
+.content button {
+  width: 100%;
+  line-height: 35px;
+  border-radius: 3px;
+  font-size: 1.6rem;
+}
+.content .btn_login {
+  background: #ff9000;
+  color: #ffffff;
+  border: #ff9000;
+  margin-bottom: 10px;
+}
+.content .btn_activate {
+  border: 1px solid #ff9000;
+  background: #ffffff;
+  color: #333333;
+}
+footer {
+  text-align: center;
+  margin-top: 80px;
+}
+footer img {
+  width: 42%;
+}

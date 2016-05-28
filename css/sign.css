@@ -1,0 +1,89 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+h5 {
+  padding: 10px 6%;
+  background: #ff9000;
+  line-height: 2.5rem;
+  font-size: 1.6rem;
+  position: relative;
+  text-align: center;
+  color: #fffefe;
+}
+h5 .back {
+  display: block;
+  width: 30px;
+  height: 20px;
+  position: absolute;
+  left: 6%;
+  top: 50%;
+  margin-top: -10px;
+  background: url(../images/back.png) no-repeat;
+  background-size: 10px 20px;
+}
+.list li {
+  background: #f0f0f0;
+  padding-top: 4px;
+}
+.list .title {
+  border-left: 2px solid #ff9000;
+  line-height: 2.1rem;
+  margin-bottom: 4px;
+  padding-left: 10px;
+  font-size: 1.2rem;
+  color: #666666;
+}
+.list a {
+  width: 33.33%;
+  display: inline-block;
+  padding-top: 50px;
+  padding-bottom: 7px;
+  text-align: center;
+  background: #ffffff;
+  position: relative;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  color: #666666;
+}
+.list a:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  margin-left: -20px;
+  width: 40px;
+  height: 30px;
+  background: url(../images/mark.png) no-repeat;
+  background-size: 40px 60px;
+  background-position: 0px -30px;
+}
+.list .active:after {
+  background-position: 0px 0px ;
+}
+.photo {
+  width: 88%;
+  margin: 10px auto 20px;
+  height: 275px;
+  background: #f0f0f0;
+}
+.photo a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: url(../images/photograph.png) no-repeat center;
+  background-size: 140px 140px;
+}
+.btn {
+  display: block;
+  margin: 0px auto;
+  border-radius: 3px;
+  background: #ff9000;
+  width: 88%;
+  line-height: 2.5rem;
+  color: #ffffff;
+  font-size: 1.6rem;
+  text-align: center;
+  font-weight: 400;
+}
