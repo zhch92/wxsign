@@ -36,28 +36,33 @@ h5 .sure {
 .list i {
   opacity: 0;
 }
-.list em {
-  display: block;
-  position: absolute;
-  top: 50%;
-  margin-top: -4px;
-  right: 6%;
-  width: 15px;
-  height: 8px;
-  background: url(../images/arrow_d.png) no-repeat;
-  background-size: 15px 8px;
-}
 .list input {
   margin-left: 10px;
   border: 1px solid #cccccc;
   padding: 7px;
   width: 68%;
 }
-.list select {
+.list .select {
+  width: 68%;
+  display: inline-block;
+  position: relative;
   margin-left: 10px;
   border: 1px solid #cccccc;
-  padding: 7px;
-  width: 73%;
+  padding: 0px 7px;
+}
+.list .select em {
+  display: block;
+  position: absolute;
+  top: 50%;
+  margin-top: -4px;
+  right: 10px;
+  width: 15px;
+  height: 8px;
+  background: url(../images/arrow_d.png) no-repeat;
+  background-size: 15px 8px;
+}
+.list select {
+  border: none;
 }
 .list .man {
   width: 48px;

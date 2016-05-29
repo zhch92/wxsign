@@ -1,0 +1,89 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+h5 {
+  padding: 10px 10px;
+  background: #ff9000;
+  line-height: 2.5rem;
+  font-size: 1.6rem;
+  position: relative;
+  text-align: center;
+  color: #fffefe;
+}
+h5 .back {
+  display: block;
+  width: 30px;
+  height: 20px;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  margin-top: -10px;
+  background: url(../images/back.png) no-repeat;
+  background-size: 10px 20px;
+}
+.list li {
+  position: relative;
+  padding: 15px 10px;
+  border-bottom: 1px solid #cccccc;
+}
+.list .sign_no {
+  background: #f0f0f0;
+}
+.list .img {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  margin-top: -25px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+.list .img img {
+  width: 50px;
+  height: 50px;
+}
+.list .class_room {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -25px;
+}
+.list .class_room img {
+  width: 50px;
+  height: 50px;
+}
+.list p {
+  font-size: 1.2rem;
+  color: #666666;
+  line-height: 2rem;
+  padding: 0px 60px;
+}
+.list .name {
+  font-size: 1.4rem;
+  color: #333333;
+  margin-bottom: 5px;
+}
+.list .sign {
+  padding-left: 75px;
+  position: relative;
+  color: #999999;
+}
+.list .sign:after {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  left: 60px;
+  top: 50%;
+  margin-top: -5px;
+  background: url(../images/sign_m.png) no-repeat;
+  background-size: 10px 30px;
+}
+.list .active:after {
+  background-position: 0px -20px;
+}

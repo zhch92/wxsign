@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <h5><a href="#" class="back"></a><!-- <img src="images/user.jpg" alt=""> -->班级详情 <!-- <a href="#" class="add"></a>  --></h5>
+    <h5><a href="history.go(-1)" class="back"></a><!-- <img src="images/user.jpg" alt=""> -->班级详情 <!-- <a href="#" class="add"></a>  --></h5>
     <div class="list">
         <ul>
             <li>
@@ -38,6 +38,24 @@
         
         </ul>
     </div>
+    <script>
+      function init(){
+        $.ajax({
+            type:'post',
+            data:{},
+            url:'',
+            dataType:'json',
+            success:function(data){
+                var liList='';
+               for (var i = 0; i < data.length; i++) {
+                   liList+='<li><div class="img"><img src="images/'+data[i].img+'.jpg" alt=""></div><p class="name">'+data[i].name+'</p><p><p>电话：'+data[i].tel+'</p></li>'
+               }
+               $('.list ul').append(liList);
+            }
+        })
+      }
+      init()
+    </script>
 </body>
 
 </html>

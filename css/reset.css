@@ -297,6 +297,7 @@ html {
 @media screen and (min-width: 750px) {
   html {
     background: #dddddd;
+    min-height: 100%;
   }
   body {
     background: #ffffff;
