@@ -11,27 +11,67 @@
     <title>登录</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/login.css">
-
 </head>
 
 <body>
     <div class="logo"><img src="images/logo.png" alt="">
         <br>前程科技教务管理系统</div>
-    <div class="content">
-        <ul>
-            <li>学&nbsp;&nbsp;号:
-                <input type="text">
-            </li>
-            <li>密&nbsp;&nbsp;码:
-                <input type="text">
-            </li>
-        </ul>
-        <p class="forget_pwd"><a href="#">忘记密码？</a></p>
-        <p class="choose"><span>学生</span><span class="active">老师</span></p>
-        <p ><button class="btn_login">登&nbsp;录</button></p>
-        <p><button class="btn_activate">激&nbsp;活</button></p>
-    </div>
+    <form name="login" action="http://121.42.144.10/cappdev/service/login" method="post">
+        <div class="content">
+            <ul>
+                <li>学&nbsp;&nbsp;号:
+                    <input class="tel" type="tel" name="studentid" autocomplete="off">
+                </li>
+                <li>密&nbsp;&nbsp;码:
+                    <input class="pwd" type="text" name="password" autocomplete="off">
+                </li>
+            </ul>
+            <p class="forget_pwd"><a href="forget_pwd.html">忘记密码？</a></p>
+            <p class="choose">
+                <input type="hidden" class="student">
+                <input type="hidden" class="teacher"><span data-flag="1">学生</span><span data-flag="2">老师</span></p>
+            <p class="btn"><a href="javascript:void(0);" class="btn_login">登&nbsp;录</a></p>
+            <p class="btn"><a href="set_pwd.html" class="btn_activate">激&nbsp;活</a></p>
+        </div>
+    </form>
     <footer><img src="images/footer.png" alt=""></footer>
+    <script src="js/jquery.min.js"></script>
+    <script>
+    $(function() {
+        $(".choose span").on('click', function() {
+            $(this).toggleClass('active').siblings().removeClass('active');
+        });
+        $(".btn_login").on('click', function() {
+            var tel = $.trim($(".tel").val());
+            var pwd = $.trim($(".pwd").val());
+            var flagB=$('.choose span').is('.active');
+            var flag=$('.choose .active').attr('data-flag');
+            if (tel == '') {
+                alert("请填写学号");
+                return false;
+            }
+            if (pwd == '') {
+                alert("请填写密码");
+                return false;
+            }
+            if (!flagB) {
+               alert("请选择角色");
+                return false; 
+            }
+            if (tel != '' && pwd != '' && flagB ) {
+                var data = $.ajax({
+                    url: 'http://121.42.144.10/cappdev/service/users?act=login&studentid=1234567&password=123456&flag=1',
+                    cache: false,
+                    async: false
+                }).responseText;
+                if (data.server_result == "1" && flag=="1" ) {
+                    location.href = "student_info.html"
+                }
+
+            }
+        });
+    })
+    </script>
 </body>
 
 </html>

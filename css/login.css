@@ -55,19 +55,22 @@
 .content .choose .active:after {
   background-position: 0px -10px;
 }
-.content button {
+.content .btn a {
   width: 100%;
   line-height: 35px;
   border-radius: 3px;
   font-size: 1.6rem;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
 }
-.content .btn_login {
+.content .btn .btn_login {
   background: #ff9000;
   color: #ffffff;
   border: #ff9000;
   margin-bottom: 10px;
 }
-.content .btn_activate {
+.content .btn .btn_activate {
   border: 1px solid #ff9000;
   background: #ffffff;
   color: #333333;

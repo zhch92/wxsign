@@ -33,12 +33,13 @@ p {
   right: 6%;
   top: 50%;
   margin-top: -17px;
-  width: 25%;
+  width: 30%;
   border: 1px solid #cccccc;
   border-radius: 3px;
   text-align: center;
   font-size: 1.2rem;
   line-height: 30px;
+  cursor: pointer;
 }
 .content .btn {
   display: block;
@@ -46,7 +47,7 @@ p {
   border-radius: 3px;
   background: #ff9000;
   width: 100%;
-  line-height: 2.5rem;
+  line-height: 3.5rem;
   color: #ffffff;
   font-size: 1.6rem;
   text-align: center;
