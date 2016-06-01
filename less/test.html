@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>按钮测试</title>
+</head>
+<style type="text/css">
+button {
+    width: 100px;
+    height: 29px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    background: #feaf51;
+    color: #ffffff;
+    cursor: pointer;
+}
+</style>
+
+<body>
+    <button onclick="sendMsg()">发送验证码</button>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript">
+    var tt = "<span id=\"ts\">60</span>s";
+
+    function sendMsg() {
+        var btn = $('button');
+        btn.empty().append(tt);
+        btn.attr("disabled", true);
+        t = setInterval('reomve()', 1000)
+
+        // btn.text("60");
+        // btn.attr("disabled", true);
+        // t = setInterval('reomve()', 1000)
+    }
+
+    function reomve() {
+        var txt = $("#ts").text();
+        if (txt > 0) {
+            txt -= 1;
+            $("#ts").text(txt);
+
+        } else {
+            $("button").text("发送验证码");
+            clearTimeout(t)
+        };
+    }
+    </script>
+</body>
+
+</html>

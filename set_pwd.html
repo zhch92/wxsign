@@ -28,13 +28,14 @@
      function setPwd(){
       var pwd=$.trim($("#pwd").val());
       var check_pwd=$.trim($("#check_pwd").val());
+      var studentid="123465"
       if(pwd=='' || check_pwd==''){
         return false;
       }
       if (pwd===check_pwd) {
         $.ajax({
                 type:'post',
-                data:{},
+                data:{'password':pwd,'studentid':studentid},
                 url:'http://121.42.144.10/cappdev/service/users?act=setpassword&studentid=15130300121&password=12345678',
                 dataType:"json",
                 success:function(data){

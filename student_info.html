@@ -44,7 +44,7 @@
         </ul>
     </div>
     <div class="title">
-        <div class="choose"> <a href="#" class="active">家庭成员</a></div><div class="choose"><a href="#">教育经历</a> </div><div class="choose"><a href="#">工作经历</a></div>
+        <div class="choose"> <a href="javascript:void(0);" class="active">家庭成员</a></div><div class="choose"><a href="javascript:void(0);">教育经历</a> </div><div class="choose"><a href="javascript:void(0);">工作经历</a></div>
     </div>
     <div class="table">
         <table class="table1">
@@ -191,6 +191,7 @@
     <script>
     $(function(){
         $(".choose").on('click',function(){
+           $(this).find("a").addClass('active').siblings().removeClass('active')
             var $thisIdex=$(this).index()+1;
             $('table').hide();
             $('.table .table'+$thisIdex+'').show();

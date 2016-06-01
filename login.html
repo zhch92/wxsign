@@ -23,7 +23,7 @@
                     <input class="tel" type="tel" name="studentid" autocomplete="off">
                 </li>
                 <li>密&nbsp;&nbsp;码:
-                    <input class="pwd" type="text" name="password" autocomplete="off">
+                    <input class="pwd" type="password" name="password" autocomplete="off">
                 </li>
             </ul>
             <p class="forget_pwd"><a href="forget_pwd.html">忘记密码？</a></p>
@@ -31,12 +31,36 @@
                 <input type="hidden" class="student">
                 <input type="hidden" class="teacher"><span data-flag="1">学生</span><span data-flag="2">老师</span></p>
             <p class="btn"><a href="javascript:void(0);" class="btn_login">登&nbsp;录</a></p>
-            <p class="btn"><a href="set_pwd.html" class="btn_activate">激&nbsp;活</a></p>
+            <p class="btn"><a href="forget_pwd.html" class="btn_activate">激&nbsp;活</a></p>
         </div>
     </form>
     <footer><img src="images/footer.png" alt=""></footer>
     <script src="js/jquery.min.js"></script>
     <script>
+    function timedGetText(url, time, callback) {
+        var request = new XMLHttpRequest();
+        var timeout = false;
+        var timer = setTimeout(function() {
+            timeout = true;
+            request.abort();
+        }, time);
+        request.open("GET", url);
+        request.onreadystatechange = function() {
+            if (request.readyState !== 4) return;
+            if (timeout) return;
+            clearTimeout(timer);
+            if (request.status === 200) {
+                callback(request.responseText);
+            }
+        }
+        request.send(null);
+    }
+
+
+
+
+
+
     $(function() {
         $(".choose span").on('click', function() {
             $(this).toggleClass('active').siblings().removeClass('active');
@@ -44,8 +68,8 @@
         $(".btn_login").on('click', function() {
             var tel = $.trim($(".tel").val());
             var pwd = $.trim($(".pwd").val());
-            var flagB=$('.choose span').is('.active');
-            var flag=$('.choose .active').attr('data-flag');
+            var flagB = $('.choose span').is('.active');
+            var flag = $('.choose .active').attr('data-flag');
             if (tel == '') {
                 alert("请填写学号");
                 return false;
@@ -55,17 +79,20 @@
                 return false;
             }
             if (!flagB) {
-               alert("请选择角色");
-                return false; 
+                alert("请选择角色");
+                return false;
             }
-            if (tel != '' && pwd != '' && flagB ) {
+            if (tel != '' && pwd != '' && flagB) {
                 var data = $.ajax({
                     url: 'http://121.42.144.10/cappdev/service/users?act=login&studentid=1234567&password=123456&flag=1',
                     cache: false,
                     async: false
                 }).responseText;
-                if (data.server_result == "1" && flag=="1" ) {
-                    location.href = "student_info.html"
+                if (data.server_result == "1" && flag == "1") {
+                    location.href = "usercenter_student.html"
+                }
+                if (data.server_result == "1" && flag == "2") {
+                    location.href = "usercenter_student.html"
                 }
 
             }
