@@ -18,12 +18,12 @@
     <div class="list">
         <ul>
             <li>学<i>占位</i>号:
-                <input type="text"> </li>
+                <input type="text"  class="user_xuehao"> </li>
             <li>姓<i>占位</i>名:
                 <input type="text"> </li>
             <li>电<i>占位</i>话:
                 <input type="text"> </li>
-            <li>性<i>占位</i>别: <a href="#" class="man active">男</a><a href="#" class="woman">女</a></li>
+            <li class="sex">性<i>占位</i>别: <a href="#" class="man active">男</a><a href="#" class="woman">女</a></li>
             <li>院<i>占位</i>校:
                 <div class="select">
                     <select name="" id="">
@@ -187,6 +187,26 @@
             </tbody>
         </table>
     </div>
+    <script src="js/jquery.min.js"></script>
+    <script>
+    $(function(){
+        $(".choose").on('click',function(){
+            var $thisIdex=$(this).index()+1;
+            $('table').hide();
+            $('.table .table'+$thisIdex+'').show();
+        });
+        $(".sex a").on('click', function() {
+           $(this).addClass('active').siblings().removeClass('active')
+        });
+    });
+    function init(){
+        var info='{"server_result":"1","error_code":"","message":"","data":{"user_level":"10","user_build_name":"11号楼","yijiao_xuefei":"0.0","nowlianxiren_name":null,"now_address":null,"home_address":null,"user_yuan_id":"1","shifoudaikuan":"0","user_role":"0","user_chenghao":"新手","user_telno":"13500733112","user_yuan_name":"东软信息学院英语系","user_xi_name":"英语专业","user_xi_id":"1","user_build_id":"3","user_id":"1","client_id":"7704dbbe536255a7fc94956511e08697","user_image":"/cappuploadFileUser/2015-12-02/1449070812524ZUH5ALEF.png","user_dorm_id":"5","jinjilianxiren_telno":null,"user_class_id":"5","user_xuehao":"1234567","user_company_id":"1","yingwangjie":"0","xi_name":null,"youwujichu":"0","user_class_name":"英语15002班","user_build_branch_name":"A座","xuexiao_name":null,"zixunshi_name":null,"user_name":"寝室长","user_flag":"0","user_xi_year":"2015级","user_company_name":"东软信息学院","user_point":"0","yijiao_baomingfei":"0.0","user_sex":"1","jinjilianxiren":null,"user_build_branch_id":"6","user_dorm_name":"602室","nowlianxiren_telno":null,"banji_zuoweihao":"0"}}';
+        var obj=$.parseJSON(info);
+        var ulCont='<ul><li>学<i>占位</i>号:<input type="text" value=\"'+obj.data.user_xuehao+'\"> </li><li>姓<i>占位</i>名:<input type="text" value=\"'+obj.data.user_name+'\"> </li><li>电<i>占位</i>话:<input type="tel" value=\"'+obj.data.user_telno+'\"> </li><li class="sex">性<i>占位</i>别: <a href="#" class="man active">男</a><a href="#" class="woman">女</a></li><li>院<i>占位</i>校:<div class="select"><select name="" id=""><option value="java班">java班</option></select><em></em></div></li><li>班<i>占位</i>级:<div class="select"><select name="" id=""><option value="java班">java班</option></select> <em></em></div></li><li>座<i>占位</i>位:<input type="text"> </li><li>出生年月:<input type="text"> </li></ul>'
+        $(".list").append(ulCont)
+    }
+     init()
+    </script>
 </body>
 
 </html>

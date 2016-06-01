@@ -8,7 +8,7 @@
     <meta content="black" name="apple-mobile-web-app-status-bar-style">
     <meta content="telephone=no" name="format-detection">
     <meta content="email=no" name="format-detection">
-    <title>班级详情</title>
+    <title>设置密码</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/set_pwd.css">
 </head>
@@ -17,12 +17,35 @@
    <p>设置密码后就可以用学号登录系统</p>
    <div class="content">
 <ul>
-    <li>输入密码:<input type="text"></li>
-    <li>确认密码:<input type="text"></li>
+    <li>输入密码:<input type="password" id="pwd"></li>
+    <li>确认密码:<input type="password" id="check_pwd"></li>
 </ul>
-<a href="#" class="btn">确认</a>
+<a href="javascript:void(0);" class="btn" onclick="setPwd()">确认</a>
    </div>
     <footer><img src="images/footer.png" alt=""></footer>
+    <script src="js/jquery.min.js"></script>
+    <script>
+     function setPwd(){
+      var pwd=$.trim($("#pwd").val());
+      var check_pwd=$.trim($("#check_pwd").val());
+      if(pwd=='' || check_pwd==''){
+        return false;
+      }
+      if (pwd===check_pwd) {
+        $.ajax({
+                type:'post',
+                data:{},
+                url:'http://121.42.144.10/cappdev/service/users?act=setpassword&studentid=15130300121&password=12345678',
+                dataType:"json",
+                success:function(data){
+                    
+                }
+            })
+    }else{
+        alert("两次输入不一致")
+     }
+    }
+    </script>
 </body>
 
 </html>
