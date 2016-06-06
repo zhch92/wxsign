@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>个人中心</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/student_info.css">
+</head>
+
+<body>
+    <h5><!-- <a href="#" class="back"> --></a><!-- <img src="images/user.jpg" alt=""> -->个人中心 <a href="#" class="sure">确定</a> </h5>
+    <div class="list">
+        <ul>
+            <li>学<i>占位</i>号:
+                <input type="text" class="user_xuehao"> </li>
+            <li>姓<i>占位</i>名:
+                <input type="text"> </li>
+            <li>电<i>占位</i>话:
+                <input type="text"> </li>
+            <li class="sex">性<i>占位</i>别: <a href="#" class="man active">男</a><a href="#" class="woman">女</a></li>
+            <li>院<i>占位</i>校:
+                <div class="select">
+                    <select name="" id="">
+                        <option value="java班">java班</option>
+                    </select>
+                    <em></em></div>
+            </li>
+            <li>班<i>占位</i>级:
+                <div class="select">
+                    <select name="" id="">
+                        <option value="java班">java班</option>
+                    </select> <em></em></div>
+            </li>
+            <li>座<i>占位</i>位:
+                <input type="text"> </li>
+            <li>出生年月:
+                <input type="text"> </li>
+        </ul>
+    </div>
+    <div class="title">
+        <div class="choose"> <a href="javascript:void(0);" class="active">家庭成员</a></div>
+        <div class="choose"><a href="javascript:void(0);">教育经历</a> </div>
+        <div class="choose"><a href="javascript:void(0);">工作经历</a></div>
+    </div>
+    <div class="table">
+        <table class="table1">
+            <tbody>
+                <tr>
+                    <td>
+                        <input type="text">
+                    </td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text">
+                    </td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text">
+                    </td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text">
+                    </td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script>
+    $(function() {
+        $(".choose").on('click', function() {
+            $(this).find("a").addClass('active').siblings().removeClass('active')
+            var $thisIdex = $(this).index() + 1;
+            $('table').hide();
+            $('.table .table' + $thisIdex + '').show();
+        });
+        $(".sex a").on('click', function() {
+            $(this).addClass('active').siblings().removeClass('active')
+        });
+    });
+    </script>
+</body>
+
+</html>

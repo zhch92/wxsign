@@ -51,14 +51,31 @@ h5 .add {
   margin-top: 30px;
   margin-bottom: 80px;
 }
+.content .seat ul {
+  margin: 0 auto;
+  position: relative;
+}
+.content .seat ul:after {
+  content: "过道";
+  width: 20px;
+  line-height: 40px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  margin-top: -40px;
+  left: 50%;
+  margin-left: -10px;
+  text-align: center;
+  color: #019bd7;
+}
 .content .seat li {
   display: inline-block;
-  width: 40px;
+  width: 14.28571429%;
   text-align: center;
   margin-bottom: 10px;
 }
 .content .seat li:nth-child(6n-3) {
-  margin-right: 25px;
+  margin-right: 8.57142857%;
 }
 .content .seat .number {
   display: block;
@@ -70,7 +87,7 @@ h5 .add {
   text-align: center;
   padding-bottom: 13px;
   background: url(../images/seat.png) no-repeat center;
-  background-size: 33px 33px ;
+  background-size: 33px 33px;
   margin-bottom: 4px;
 }
 .content .seat .name {
@@ -80,7 +97,7 @@ h5 .add {
 .content p {
   font-size: 1.4rem;
   color: #333333;
-  line-height: 20px;
+  line-height: 2.5rem;
   margin-bottom: 5px;
 }
 .content p:last-child {

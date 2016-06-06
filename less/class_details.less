@@ -1,7 +1,8 @@
-*{
+* {
     padding: 0;
     margin: 0;
 }
+
 h5 {
     padding: 10px 6%;
     background: #ff9000;
@@ -33,34 +34,51 @@ h5 {
         background-size: 15px 15px;
     }
 }
-.content{
+
+.content {
     padding: 0 6%;
     margin-top: 15px;
-    .platform{
+    .platform {
         width: 157px;
         height: 37px;
         border: 1px solid #019bd7;
         margin: 0 auto;
         text-align: center;
         font-style: 1.6rem;
-        color:#019bd7; 
+        color: #019bd7;
         line-height: 39px;
     }
-    .seat{
+    .seat {
+        ul{
+            margin: 0 auto;
+            position: relative;
+            &:after{
+                content: "过道";
+                width: 20px;
+                line-height: 40px;
+                display: block;
+                position: absolute;
+                top: 50%;
+                margin-top: -40px;
+                left: 50%;
+                margin-left: -10px;
+                text-align: center;
+            color: #019bd7;
+                
+            }
+        }
         margin-top: 30px;
         margin-bottom: 80px;
-        li{
+        li {
             display: inline-block;
-            width: 40px;
+            width:100/7%;
             text-align: center;
             margin-bottom: 10px;
         }
-    li:nth-child(6n-3){
-        margin-right: 25px;
-    }
-
-
-        .number{
+        li:nth-child(6n-3) {
+            margin-right: 60/7%;
+        }
+        .number {
             display: block;
             width: 33px;
             margin: 0 auto;
@@ -70,22 +88,164 @@ h5 {
             text-align: center;
             padding-bottom: 13px;
             background: url(../images/seat.png) no-repeat center;
-            background-size: 33px 33px ;
+            background-size: 33px 33px;
             margin-bottom: 4px;
         }
-        .name{
+        .name {
             font-size: 12px;
             color: #019bd7;
         }
     }
-    p{
+    p {
         font-size: 1.4rem;
-        color:#333333;
-        line-height: 20px;
+        color: #333333;
+        line-height: 2.5rem;
         margin-bottom: 5px;
     }
-    p:last-child{
+    p:last-child {
         margin-bottom: 20px;
     }
 }
+
+// @media screen and (min-width: 321px) and (max-width: 375px) {
+//     .content {
+//         .seat {
+//             margin-top: 30px;
+//             margin-bottom: 80px;
+//             li {
+//                 display: inline-block;
+//                 width: 48px;
+//                 text-align: center;
+//                 margin-bottom: 10px;
+//             }
+//             li:nth-child(6n-3) {
+//                 margin-right: 25px;
+//             }
+//             .number {
+//                 display: block;
+//                 width: 33px;
+//                 margin: 0 auto;
+//                 line-height: 20px;
+//                 font-size: 12px;
+//                 color: #019bd7;
+//                 text-align: center;
+//                 padding-bottom: 13px;
+//                 background: url(../images/seat.png) no-repeat center;
+//                 background-size: 33px 33px;
+//                 margin-bottom: 4px;
+//             }
+//             .name {
+//                 font-size: 12px;
+//                 color: #019bd7;
+//             }
+//         }
+//     }
+// }
+
+// @media screen and (min-width: 376px) and (max-width: 414px) {
+//     .content {
+//         .seat {
+//             margin-top: 30px;
+//             margin-bottom: 80px;
+//             li {
+//                 display: inline-block;
+//                 width: 54px;
+//                 text-align: center;
+//                 margin-bottom: 10px;
+//             }
+//             li:nth-child(6n-3) {
+//                 margin-right: 25px;
+//             }
+//             .number {
+//                 display: block;
+//                 width: 33px;
+//                 margin: 0 auto;
+//                 line-height: 20px;
+//                 font-size: 12px;
+//                 color: #019bd7;
+//                 text-align: center;
+//                 padding-bottom: 13px;
+//                 background: url(../images/seat.png) no-repeat center;
+//                 background-size: 33px 33px;
+//                 margin-bottom: 4px;
+//             }
+//             .name {
+//                 font-size: 12px;
+//                 color: #019bd7;
+//             }
+//         }
+//     }
+// }
+
+// @media screen and (min-width: 415px) and (max-width: 639px) {
+//     .content {
+//         .seat {
+//             margin-top: 30px;
+//             margin-bottom: 80px;
+//             li {
+//                 display: inline-block;
+//                 width: 53px;
+//                 text-align: center;
+//                 margin-bottom: 10px;
+//             }
+//             li:nth-child(6n-3) {
+//                 margin-right: 25px;
+//             }
+//         }
+//     }
+// }
+
+// @media screen and (min-width: 640px) and (max-width: 719px) {
+//     .content {
+//         .seat {
+//             margin-top: 30px;
+//             margin-bottom: 80px;
+//             li {
+//                 display: inline-block;
+//                 width: 73px;
+//                 text-align: center;
+//                 margin-bottom: 10px;
+//             }
+//             li:nth-child(6n-3) {
+//                 margin-right: 25px;
+//             }
+//         }
+//     }
+// }
+
+// @media screen and (min-width: 720px) and (max-width: 749px) {
+//     .content {
+//         .seat {
+//             margin-top: 30px;
+//             margin-bottom: 80px;
+//             li {
+//                 display: inline-block;
+//                 width: 82px;
+//                 text-align: center;
+//                 margin-bottom: 10px;
+//             }
+//             li:nth-child(6n-3) {
+//                 margin-right: 25px;
+//             }
+//         }
+//     }
+// }
+
+// @media screen and (min-width: 750px) and (max-width: 799px) {
+//     .content {
+//         .seat {
+//             margin-top: 30px;
+//             margin-bottom: 80px;
+//             li {
+//                 display: inline-block;
+//                 width: 88px;
+//                 text-align: center;
+//                 margin-bottom: 10px;
+//             }
+//             li:nth-child(6n-3) {
+//                 margin-right: 25px;
+//             }
+//         }
+//     }
+// }
 

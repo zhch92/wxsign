@@ -49,6 +49,8 @@ h5 .sure {
   margin-left: 10px;
   border: 1px solid #cccccc;
   padding: 0px 7px;
+  height: 30px;
+  line-height: 30px;
 }
 .list .select em {
   display: block;
@@ -62,6 +64,7 @@ h5 .sure {
   background-size: 15px 8px;
 }
 .list select {
+  width: 100%;
   border: none;
 }
 .list .man {
@@ -91,6 +94,14 @@ h5 .sure {
   background: #f0f0f0;
   height: 40px;
   margin-bottom: 4px;
+}
+.title h3 {
+  text-align: center;
+  line-height: 40px;
+  font-size: 1.4rem;
+  color: #333333;
+  font-style: normal;
+  font-weight: normal;
 }
 .title .choose {
   display: inline-block;
@@ -136,6 +147,7 @@ h5 .sure {
   height: 30px;
   line-height: 30px;
   font-size: 1.2rem;
+  text-align: center;
 }
 .table input {
   width: 100%;
@@ -143,4 +155,83 @@ h5 .sure {
   border: none;
   outline: none;
   text-align: center;
+}
+.site_choose {
+  box-shadow: 0px 0px 10px #cccccc;
+  width: 270px;
+  margin: 0 auto;
+  padding: 10px;
+  position: fixed;
+  bottom: 115px;
+  left: 50%;
+  margin-left: -145px;
+  background: #ffffff;
+  z-index: 9999;
+  display: none;
+}
+.site_choose .hint {
+  width: 110px;
+  margin: 0 auto;
+  text-align: center;
+}
+.site_choose .hint span {
+  padding-left: 18px;
+}
+.site_choose .hint .choose_n {
+  background: url(../images/seat_n.png) no-repeat 0px center;
+  background-size: 15px 15px;
+  margin-left: 20px;
+}
+.site_choose .hint .choose_y {
+  background: url(../images/seat.png) no-repeat 0px center;
+  background-size: 15px 15px;
+}
+.site_choose .dais {
+  width: 97px;
+  line-height: 27px;
+  margin: 8px auto;
+  border: 2px solid #cccccc;
+  text-align: center;
+}
+.site_choose .site ul {
+  position: relative;
+}
+.site_choose .site ul:after {
+  content: "过道";
+  color: #019bd7;
+  font-size: 14px;
+  display: block;
+  width: 25px;
+  line-height: 40px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -12px;
+  margin-top: -40px;
+  text-align: center;
+}
+.site_choose .site li {
+  margin-bottom: 10px;
+}
+.site_choose .site a {
+  margin: 0px 5px;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+}
+.site_choose .site .num {
+  vertical-align: top;
+  color: #019bd7;
+  font-size: 1.4rem;
+}
+.site_choose .site a:nth-child(4) {
+  margin-right: 40px;
+}
+.site_choose .site .choose_n {
+  background: url(../images/seat_n.png) no-repeat 0px center;
+  background-size: 24px 24px;
+}
+.site_choose .site .choose_y {
+  background: url(../images/seat.png) no-repeat 0px center;
+  background-size: 24px 24px;
 }

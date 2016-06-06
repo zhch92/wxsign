@@ -32,8 +32,12 @@
   display: block;
   z-index: 999;
 }
-.above .user_icon .fowle {
-  background: url(../images/fowle.png) #ffffff no-repeat center;
+.above .user_icon .woman {
+  background: url(../images/woman.png) #ffffff no-repeat center;
+  background-size: 18px 18px;
+}
+.above .user_icon .man {
+  background: url(../images/man.png) #ffffff no-repeat center;
   background-size: 18px 18px;
 }
 .above .name {
@@ -44,7 +48,7 @@
 }
 .above .user_info span {
   display: inline-block;
-  width: 33.333%;
+  width: 50%;
   color: #fffefe;
   text-align: center;
   font-size: 1.2rem;
@@ -87,6 +91,10 @@
   margin-left: -33px;
   width: 65px;
   height: 65px;
+}
+.operate .see_sign:after {
+  background: url(../images/see_sign.png) no-repeat;
+  background-size: 65px 65px;
 }
 .operate .sign:after {
   background: url(../images/sign.png) no-repeat;

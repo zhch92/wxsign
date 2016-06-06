@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    <title> New Document </title>
+    <meta name="Generator" content="EditPlus">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <script src="js/jquery.min.js"></script>
+    <script>
+  
+
+
+
+
+    function f_check_date(obj) {
+        var date = trim(obj.value);
+        var dtype = obj.eos_datatype;
+        var format = dtype.substring(dtype.indexOf("(") + 1, dtype.indexOf(")")); //日期格式     
+        var year, month, day, datePat, matchArray;
+
+        if (/^(y{4})(-|\/)(M{1,2})\2(d{1,2})$/.test(format))
+            datePat = /^(\d{4})(-|\/)(\d{1,2})\2(\d{1,2})$/;
+        else if (/^(y{4})(年)(M{1,2})(月)(d{1,2})(日)$/.test(format))
+            datePat = /^(\d{4})年(\d{1,2})月(\d{1,2})日$/;
+        else if (format == "yyyyMMdd")
+            datePat = /^(\d{4})(\d{2})(\d{2})$/;
+        else {
+            f_alert(obj, "日期格式不对");
+            return false;
+        }
+        matchArray = date.match(datePat);
+        if (matchArray == null) {
+            f_alert(obj, "日期长度不对,或日期中有非数字符号");
+            return false;
+        }
+        if (/^(y{4})(-|\/)(M{1,2})\2(d{1,2})$/.test(format)) {
+            year = matchArray[1];
+            month = matchArray[3];
+            day = matchArray[4];
+        } else {
+            year = matchArray[1];
+            month = matchArray[2];
+            day = matchArray[3];
+        }
+        if (month < 1 || month > 12) {
+            f_alert(obj, "月份应该为1到12的整数");
+            return false;
+        }
+        if (day < 1 || day > 31) {
+            f_alert(obj, "每个月的天数应该为1到31的整数");
+            return false;
+        }
+        if ((month == 4 || month == 6 || month == 9 || month == 11) && day == 31) {
+            f_alert(obj, "该月不存在31号");
+            return false;
+        }
+        if (month == 2) {
+            var isleap = (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
+            if (day > 29) {
+                f_alert(obj, "2月最多有29天");
+                return false;
+            }
+            if ((day == 29) && (!isleap)) {
+                f_alert(obj, "闰年2月才有29天");
+                return false;
+            }
+        }
+        return true;
+    }
+    f_check_date("2000年1月12日")
+    </script>
+</head>
+
+<body>
+    <input type="button" value="Click" onclick="isDate()" />
+</body>
+
+</html>

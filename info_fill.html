@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>个人中心</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/student_info.css">
+</head>
+
+<body>
+    <h5><!-- <a href="#" class="back"> --></a><!-- <img src="images/user.jpg" alt=""> -->个人中心 <a href="#" class="sure">确定</a> </h5>
+    <div class="list">
+        <ul>
+            <li>学<i>占位</i>号:
+                <input type="text" class="user_xuehao"> </li>
+            <li>姓<i>占位</i>名:
+                <input type="text"> </li>
+            <li>电<i>占位</i>话:
+                <input type="text"> </li>
+            <li class="sex">性<i>占位</i>别: <a href="#" class="man active">男</a><a href="#" class="woman">女</a></li>
+            <li>院<i>占位</i>校:
+               <input type="text">
+            </li>
+            <li>班<i>占位</i>级:
+                <div class="select">
+                    <select name="" id="">
+                        <option value="java班">java班</option>
+                        <option value="java班">java班</option>
+                        <option value="java班">java班</option>
+                    </select> <em></em></div>
+            </li>
+            <li>座<i>占位</i>位:
+                 <div class="select" id="select">&nbsp;<span></span>
+                      <em></em>
+                    </div> </li>
+            <li>出生年月:
+                <input type="text" placeholder="格式:xxxx年xx月xx日"> </li>
+        </ul>
+    </div>
+    <div class="title">
+        <h3>变更记录</h3>
+    </div>
+    <div class="table">
+        <table class="table1">
+            <tbody>
+                <tr>
+                    <td>
+                        3月5号转出
+                    </td>
+                    <td>
+                        刘峰老师
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        3月5号转出
+                    </td>
+                    <td>
+                        刘峰老师
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        3月5号转出
+                    </td>
+                    <td>
+                        刘峰老师
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        3月5号转出
+                    </td>
+                    <td>
+                        刘峰老师
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        3月5号转出
+                    </td>
+                    <td>
+                        刘峰老师
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="site_choose">
+        <div class="hint"><span class="choose_y">可选</span><span class="choose_n">已选</span></div>
+        <div class="dais">讲台</div>
+        <div class="site">
+            <ul>
+                <li><span class="num">1</span>
+                    <a href="javascript:void(0);" class="choose_n"></a>
+                    <a href="javascript:void(0);" class="choose_y"></a>
+                    <a href="javascript:void(0);" class="choose_n"></a>
+                    <a href="javascript:void(0);" class="choose_y"></a>
+                    <a href="javascript:void(0);" class="choose_n"></a>
+                    <a href="javascript:void(0);" class="choose_y"></a>
+                </li><li><span class="num">2</span>
+                    <a href="javascript:void(0);" class="choose_n"></a>
+                    <a href="javascript:void(0);" class="choose_y"></a>
+                    <a href="javascript:void(0);" class="choose_n"></a>
+                    <a href="javascript:void(0);" class="choose_y"></a>
+                    <a href="javascript:void(0);" class="choose_n"></a>
+                    <a href="javascript:void(0);" class="choose_y"></a>
+                </li><li><span class="num">3</span>
+                    <a href="javascript:void(0);" class="choose_n"></a>
+                    <a href="javascript:void(0);" class="choose_y"></a>
+                    <a href="javascript:void(0);" class="choose_n"></a>
+                    <a href="javascript:void(0);" class="choose_y"></a>
+                    <a href="javascript:void(0);" class="choose_n"></a>
+                    <a href="javascript:void(0);" class="choose_y"></a>
+                </li><li><span class="num">4</span>
+                    <a href="javascript:void(0);" class="choose_n"></a>
+                    <a href="javascript:void(0);" class="choose_y"></a>
+                    <a href="javascript:void(0);" class="choose_n"></a>
+                    <a href="javascript:void(0);" class="choose_y"></a>
+                    <a href="javascript:void(0);" class="choose_n"></a>
+                    <a href="javascript:void(0);" class="choose_y"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script>
+    $(function() {
+        $(".choose").on('click', function() {
+            $(this).find("a").addClass('active').siblings().removeClass('active')
+            var $thisIdex = $(this).index() + 1;
+            $('table').hide();
+            $('.table .table' + $thisIdex + '').show();
+        });
+        $(".sex a").on('click', function() {
+            $(this).addClass('active').siblings().removeClass('active')
+        });
+        // 选择座位
+        $("#select").on('click',function(){
+            $(".site_choose").show();
+        });
+        $(".site a").on('click',function(){
+            var siteCol=$(this).index();
+            var siteRow=$(this).siblings('.num').text();
+            var choose=$(this).is(".choose_y");
+            if (choose) {
+                $("#select span").text(siteRow+siteCol);
+                $(".site_choose").hide();
+            }else{
+                alert("该位置已被选择");
+            }
+        });
+        $(document).on('click',function(){
+                $(".site_choose").hide();
+        })
+        $("#select,.site_choose").click(function(event){
+            event.stopPropagation();
+        });
+    });
+    function infoSubmit(){
+
+    }
+    </script>
+</body>
+
+</html>

@@ -14,38 +14,64 @@
 </head>
 
 <body>
-   <p>设置密码后就可以用学号登录系统</p>
-   <div class="content">
-<ul>
-    <li>输入密码:<input type="password" id="pwd"></li>
-    <li>确认密码:<input type="password" id="check_pwd"></li>
-</ul>
-<a href="javascript:void(0);" class="btn" onclick="setPwd()">确认</a>
-   </div>
+    <p>设置密码后就可以用学号登录系统</p>
+    <div class="content">
+        <ul>
+            <li>输入密码:
+                <input type="password" id="pwd">
+            </li>
+            <li>确认密码:
+                <input type="password" id="check_pwd">
+            </li>
+        </ul>
+        <a href="javascript:void(0);" class="btn" onclick="setPwd()">确认</a>
+    </div>
     <footer><img src="images/footer.png" alt=""></footer>
     <script src="js/jquery.min.js"></script>
     <script>
-     function setPwd(){
-      var pwd=$.trim($("#pwd").val());
-      var check_pwd=$.trim($("#check_pwd").val());
-      var studentid="123465"
-      if(pwd=='' || check_pwd==''){
-        return false;
-      }
-      if (pwd===check_pwd) {
-        $.ajax({
-                type:'post',
-                data:{'password':pwd,'studentid':studentid},
-                url:'http://121.42.144.10/cappdev/service/users?act=setpassword&studentid=15130300121&password=12345678',
-                dataType:"json",
-                success:function(data){
-                    
+    function setPwd() {
+        var pwd = $.trim($("#pwd").val());
+        var check_pwd = $.trim($("#check_pwd").val());
+        // var studentid = "123465"
+        if (pwd == '' || check_pwd == '') {
+            return false;
+        }
+        if (pwd === check_pwd) {
+            $.ajax({
+                type: 'post',
+                data: {
+                    'password': pwd,
+                    'studentid': GetQueryString('studentid')
+                },
+                url: 'http://121.42.144.10/cappdev/service/users?act=setpassword&studentid=' + GetQueryString('studentid') + '&password=' + pwd + '',
+                dataType: "json",
+                success: function(data) {
+                    var role = data.data.user_role;
+                    if (data.server_result == '1') {
+                        if (role == '0') {
+                            location.href = 'student_info.html?user_role=' + role + '';
+                        }else{
+                            location.href = 'usercenter_counselor.html?user_role=' + role +'';
+                        }
+                    } else {
+                        alert(data.message);
+                    }
                 }
             })
-    }else{
-        alert("两次输入不一致")
-     }
+        } else {
+            alert("两次输入不一致")
+        }
     }
+    // 地址栏传参
+    function GetQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var lUrl = window.location.search;
+        var r = decodeURI(lUrl).substr(1).match(reg);
+        if (r != null) {
+            return unescape(r[2])
+        }
+        return ""
+    };
     </script>
 </body>
 

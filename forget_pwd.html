@@ -55,6 +55,7 @@
         }
 
     }
+
     function reomve() {
         var txt = $("#ts").text();
         if (txt > 0) {
@@ -67,20 +68,32 @@
         };
     }
     // 验证验证码
-    function checkMsg(){
+    function checkMsg() {
         var tel = $.trim($("#tel").val());
-        var verifycode=$.trim($("#code").val());
-         $.ajax({
-                type: 'post',
-                data: {'tel':tel,'verifycode':verifycode},
-                url: 'http://121.42.144.10/cappdev/service/users?act=checkverifycode',
-                dataType: "json",
-                success: function(data) {
-                location.href="set_pwd.html"
+        var verifycode = $.trim($("#code").val());
+        var verifycode = $.trim($("#code").val());
+        var studentid = $.$.trim($('#num').val())
+        $.ajax({
+            type: 'post',
+            data: {
+                'tel': tel,
+                'verifycode': verifycode
+            },
+            url: 'http://121.42.144.10/cappdev/service/users?act=checkverifycode',
+            dataType: "json",
+            success: function(data) {
+                if (studentid != '') {
+                    location.href = "set_pwd.html?studentid=" + studentid + ""
+                } else {
+                    alert("请刷新页面");
                 }
-            })
+
+            }
+        })
 
     }
+
+ 
     </script>
 </body>
 

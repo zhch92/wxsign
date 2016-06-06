@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>个人中心——学生</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/usercenter.css">
+</head>
+
+<body>
+ <!--    <div class="above">
+        <h5>个人中心</h5>
+        <div class="user">
+            <div class="user_icon"><a href="student_info.html"><img src="images/user.jpg" alt=""></a><span class="sex woman"></span></div>
+            <p class="name">张三</p>
+        </div>
+        <div class="user_info">
+            <span> <strong>班级</strong><br>java1206班</span><span> <strong>学号</strong><br>1234</span>
+        </div>
+    </div>
+    <div class="operate">
+        <a href="photograph.html" class="sign">签到</a><a href="adrr.html" class="contacts">通讯录</a>
+        <a href="class_list.html" class="grade">班级</a>
+    </div> -->
+    <script src="js/jquery.min.js"></script>
+    <script>
+    function init() {
+        // var data = $.ajax({
+        //     url: 'http://121.42.144.10/cappdev/service/users?act=getUserInfo&userID=1',
+        //     cache: false,
+        //     async: false
+        // }).responseText;
+        var info = '{"server_result":"1","error_code":"","message":"","data":{"user_level":"10","user_build_name":"11号楼","yijiao_xuefei":"0.0","nowlianxiren_name":null,"now_address":null,"home_address":null,"user_yuan_id":"1","shifoudaikuan":"0","user_role":"0","user_chenghao":"新手","user_telno":"13500733112","user_yuan_name":"东软信息学院英语系","user_xi_name":"英语专业","user_xi_id":"1","user_build_id":"3","user_id":"1","client_id":"7704dbbe536255a7fc94956511e08697","user_image":"/cappuploadFileUser/2015-12-02/1449070812524ZUH5ALEF.png","user_dorm_id":"5","jinjilianxiren_telno":null,"user_class_id":"5","user_xuehao":"1234567","user_company_id":"1","yingwangjie":"0","xi_name":null,"youwujichu":"0","user_class_name":"英语15002班","user_build_branch_name":"A座","xuexiao_name":null,"zixunshi_name":null,"user_name":"寝室长","user_flag":"0","user_xi_year":"2015级","user_company_name":"东软信息学院","user_point":"0","yijiao_baomingfei":"0.0","user_sex":"1","jinjilianxiren":null,"user_build_branch_id":"6","user_dorm_name":"602室","nowlianxiren_telno":null,"banji_zuoweihao":"0"}}';
+        var obj = $.parseJSON(info);
+        var user_sex = obj.data.user_sex;
+        var role = GetQueryString('user_role');
+        var sex = releHtml = '';
+        if (user_sex == '0') {
+            sex = 'woman';
+        } else {
+            sex = 'man';
+        }
+        if (role == 0) {
+            var infoFill = '<div class="above"><h5>个人中心</h5><div class="user"><div class="user_icon"><a href="student_info.html"><img src="images/user.jpg" alt=""></a><span class="sex '+sex+'"></span></div><p class="name">'+obj.data.user_name+'</p></div><div class="user_info"><span> <strong>班级</strong><br>java1206班</span><span> <strong>学号</strong><br>1234</span></div></div><div class="operate"><a href="sign.html" class="sign">签到</a><a href="adrr.html" class="contacts">通讯录</a></div>';
+            $('body').append(infoFill);
+        } else {
+            var infoFill = '<div class="above"><h5>个人中心</h5><div class="user"><div class="user_icon"><a href="student_info.html"><img src="images/user.jpg" alt=""></a><span class="sex woman"></span></div><p class="name">'+obj.data.user_name+'</p></div></div><div class="operate"><a href="check_sign.html" class="see_sign">查看签到</a><a href="class_list.html" class="grade">班级</a></div>';
+            $('body').append(infoFill)
+        }
+    }
+    init()
+        // 地址栏传参
+    function GetQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var lUrl = window.location.search;
+        var r = decodeURI(lUrl).substr(1).match(reg);
+        if (r != null) {
+            return unescape(r[2])
+        }
+        return ""
+    };
+    </script>
+</body>
+
+</html>

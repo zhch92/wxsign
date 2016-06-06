@@ -1,7 +1,7 @@
 function reqData(params, callback) {
     var ajaxData = {
         url: 'http://121.42.144.10/cappdev/service/users',
-        type: "GET",
+        type: "post",
         contentType: "application/json",
         xhrFields: {
             withCredentials: true

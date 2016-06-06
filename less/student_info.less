@@ -53,6 +53,8 @@ h5 {
          margin-left: 10px;
         border: 1px solid #cccccc;
         padding: 0px 7px;
+        height: 30px;
+        line-height: 30px;
           em{
         display: block;
         position: absolute;
@@ -68,10 +70,9 @@ h5 {
     }
     select{
         
-       // width: 100%;
+       width: 100%;
        //  position: relative;
         border:none;
-       
 
     }
     .man {
@@ -102,7 +103,16 @@ h5 {
     width: 100%;
     background: #f0f0f0;
     height: 40px;
-      margin-bottom: 4px;
+    margin-bottom: 4px;
+    h3{
+        text-align: center;
+        line-height: 40px;
+        font-size: 1.4rem;
+        color: #333333;
+        font-style: normal;
+        font-weight: normal;
+
+    }
     .choose{
         display: inline-block;
         width: 33.33333%;
@@ -146,6 +156,7 @@ h5 {
         height: 30px;
         line-height: 30px;
         font-size: 1.2rem;
+        text-align: center;
     }
     input{
         width: 100%;
@@ -153,5 +164,87 @@ h5 {
         border:none;
         outline: none;
         text-align: center;
+    }
+}
+.site_choose{
+    box-shadow: 0px 0px 10px #cccccc;
+    width: 270px;
+    margin: 0 auto;
+    padding: 10px;
+    position: fixed;
+    bottom: 115px;
+    left: 50%;
+    margin-left: -145px;
+    background: #ffffff;
+    z-index: 9999;
+    display: none;
+    .hint{
+        width: 110px;
+        margin: 0 auto;
+        text-align: center;
+        span{
+            padding-left:18px;
+        }
+        .choose_n{
+            background: url(../images/seat_n.png) no-repeat 0px center;
+            background-size: 15px 15px;
+            margin-left: 20px;
+        }
+        .choose_y{
+          background: url(../images/seat.png) no-repeat 0px center;
+          background-size: 15px 15px;  
+        }
+    }
+    .dais{
+        width: 97px;
+        line-height: 27px;
+        margin: 8px auto;
+        border: 2px solid #cccccc;
+        text-align: center;
+    }
+    .site{
+        ul{
+           position: relative;
+           &:after{
+            content: "过道";
+            color: #019bd7;
+            font-size: 14px;
+            display: block;
+            width: 25px;
+            line-height: 40px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -12px;
+            margin-top: -40px;
+            text-align: center;
+
+           }
+        }
+        li{
+            margin-bottom: 10px;
+        }
+        a{
+            margin: 0px 5px;
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+        }
+        .num{
+            vertical-align: top;
+            color: #019bd7;
+            font-size: 1.4rem;
+        }
+        a:nth-child(4){
+        margin-right: 40px;
+        }
+         .choose_n{
+            background: url(../images/seat_n.png) no-repeat 0px center;
+            background-size: 24px 24px;
+        }
+        .choose_y{
+          background: url(../images/seat.png) no-repeat 0px center;
+          background-size: 24px 24px;  
+        }
     }
 }

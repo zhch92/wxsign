@@ -88,8 +88,8 @@
                     cache: false,
                     async: false
                 }).responseText;
-                if (data.server_result == "1" && flag == "1") {
-                    location.href = "usercenter_student.html"
+                if (data.server_result == "1" && data.data.user_role == "0") {
+                    location.href = "usercenter_student.html?userID="+data.data.user_role+""
                 }
                 if (data.server_result == "1" && flag == "2") {
                     location.href = "usercenter_student.html"
